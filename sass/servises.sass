@@ -1,0 +1,103 @@
+.servises
+	.servise_item
+		display: flex
+		justify-content: center
+		margin-top: 5%
+		.left_side, .right_side
+			width: 50%
+		.left_side
+			position: relative				
+			img
+				position: relative
+				float: right
+				padding-right: 10%
+				z-index: 2
+			.circle
+				position: absolute
+				top: 0
+				right: 5%
+				padding: 7px
+				border: 3px dotted #C8E6D1
+				border-radius: 50%
+				z-index: 1
+		.right_side
+			padding-top: 4.4%
+			padding-left: 2%
+			p, li
+				color: #6C6C6C	
+			.title
+				p
+					font-weight: 800
+					font-size: 38px
+					line-height: 51px
+					letter-spacing: 1.5px
+					color: #00A031
+			.sub_title
+				margin-top: 2.9%
+				p
+					font-size: 16px
+					line-height: 24px
+					letter-spacing: 0.2px
+			.item
+				margin-top: 1.7%
+				margin-bottom: 5%
+				padding-left: 2.5%
+				ul
+					li
+						list-style-type: none
+						position: relative
+						list-style-image: url(../img/mark.png)
+			.more
+				position: relative
+				color: #00A031
+				border: 2px solid #00A031
+				box-sizing: border-box
+				border-radius: 28px
+				padding: 14px 75px 14px 44px
+				&:after
+					content: ''
+					background: url('../img/more_arrow.png')
+					position: absolute
+					top: 23px
+					right: 35px
+					width: 26px
+					height: 5px
+		&:nth-child(2)
+			flex-direction: row-reverse
+			margin-top: 3.5%
+			.left_side
+				width: 72%
+				.circle
+					left: -3.5%
+					top: -1%
+				img
+					float: left
+					transform: rotate(18deg)
+			.right_side
+				padding-left: 19.7%
+				padding-top: 6.1%
+				.sub_title
+					margin-top: 4.7%
+					width: 77%
+				.item
+					margin-top: 4%
+					margin-bottom: 7%
+					padding-left: 5%
+					ul
+						li
+							&:before
+								top: 2px
+								left: -32px
+		&:nth-child(3)
+			.right_side
+				.title
+					width: 70%
+				.sub_title
+					width: 55%
+				.item
+					margin-top: 2%
+					margin-bottom: 4.7%
+					padding-left: 3%
+				.more
+					margin-left: 1%
+					padding-left: 79px
