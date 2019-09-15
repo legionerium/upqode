@@ -579,3 +579,32 @@ main .contact_us {
     width: 60%;
     height: 752px;
     margin-top: 1.5%; }
+
+main footer {
+  text-align: center;
+  background-color: #222222;
+  margin-top: 10%;
+  padding-top: 4.6%; }
+  main footer .logo {
+    display: inline-block; }
+    main footer .logo a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline; }
+      main footer .logo a img {
+        width: 43.86px;
+        height: 43.86px;
+        margin-right: 8%; }
+      main footer .logo a p {
+        font-weight: bold;
+        font-size: 46px;
+        line-height: 32px; }
+  main footer .copy {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-top: 6.2%;
+    padding-bottom: 3.1%; }
