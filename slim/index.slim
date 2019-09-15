@@ -4,7 +4,7 @@ head
 	meta charset="UTF-8"/
 	title UPQODE
 	link rel="stylesheet" href="css/main.css"/
-	script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"
+	script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"	
 	script src='js/main.js'
 	script src="js/map.json"
 body
@@ -161,5 +161,7 @@ body
 								.city
 									p Detroit, USA
 									p 2005 Stokes Isle Apt. 896, Venaville, New York 10010
-			.map
-	script src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAPtlQ2hmrh4Kn9G2ju2I6vSro09jnncpE&center=40.71025746062974,-74.00823401313106&zoom=15&format=png&maptype=roadmap&style=element:geometry.stroke%7Cweight:0.5&style=element:labels.text%7Ccolor:0x518259%7Cweight:0.5&style=feature:administrative%7Celement:geometry%7Cvisibility:off&style=feature:landscape%7Ccolor:0xccffc4&style=feature:poi%7Cvisibility:off&style=feature:road%7Ccolor:0xe2ffe6%7Cweight:1&style=feature:road%7Celement:labels.icon%7Cvisibility:off&style=feature:road.highway%7Ccolor:0xc8eecc&style=feature:transit%7Cvisibility:off&style=feature:water%7Ccolor:0x009cd6&size=480x360v"
+			#map
+	/ AIzaSyAPtlQ2hmrh4Kn9G2ju2I6vSro09jnncpE
+	script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPtlQ2hmrh4Kn9G2ju2I6vSro09jnncpE&callback=initMap"
+    
