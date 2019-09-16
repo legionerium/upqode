@@ -3,10 +3,7 @@ html lang="en"
 head
 	meta charset="UTF-8"/
 	title UPQODE
-	link rel="stylesheet" href="css/main.css"/
-	script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"	
-	script src='js/main.js'
-	script src="js/map.json"
+	link rel="stylesheet" href="css/main.css"/	
 body
 	header
 		.logo
@@ -98,29 +95,29 @@ body
 							li All logs in one place
 					a.more href="#" lean more
 		.team#team
-			.discrition
-				p.name Julia Harrington
-				p.post Art Director
-				p.about Have you ever had a problem with a burned light? Thanks to the effort of Thomas Edison we no longer need to invent a light bulb. We just go to the store or our cupboard and pull one out and screw it in. When we are feeling so low and deep in the pits, this is when we need light to see our way through.
+			.discrition#discrition
+				p.name
+				p.post
+				p.about
 				ul.soc_link
 					li
-						a href="#" Facebook
+						a href="" id="Facebook" target="_about" Facebook
 					li
-						a href="#" Linkedin
+						a href="" target="_about" Linkedin
 					li
-						a href="#" twitter
-				.team_slide style="background: #FBFBFB"
+						a href="" target="_about" twitter
+				.team_slide
 					.foto
-						img src="../img/team_ava.png" alt=""/
+						img src="" alt=""/
 					.team_slide_nav
 						.team_slide_button
-							a href="#" next &#8594;
-							a href="#" &#8592; prev
+							a href="#" id="next" next &#8594;
+							a href="#" id="prev" &#8592; prev
 						.team_slide_name Minnie Bell
-			.person_ava
-				img src="../img/team_ava.png" alt=""/
-				img src="../img/team_ava.png" alt=""/
-				img src="../img/team_ava.png" alt=""/
+			.team_ava
+				img.person_ava src="" alt=""/
+				img.person_ava src="" alt=""/
+				img.person_ava src="" alt=""/
 		.contact_us#contact_us
 			.adress
 				.title 
@@ -169,4 +166,7 @@ body
 					p UPQODE
 			.copy
 				|© Uoqode 2019.  All Right Reserved.
-	script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPtlQ2hmrh4Kn9G2ju2I6vSro09jnncpE&callback=initMap"  
+	/ script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPtlQ2hmrh4Kn9G2ju2I6vSro09jnncpE&callback=initMap"
+	script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"	
+	script src='js/main.js'
+	script src="js/team_slider.js"

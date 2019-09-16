@@ -461,7 +461,8 @@ main .team {
     main .team .discrition .team_slide {
       display: -webkit-box;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      background: #FBFBFB; }
       main .team .discrition .team_slide .foto {
         width: 91px;
         height: 130px; }
@@ -491,11 +492,11 @@ main .team {
           color: #00A031;
           margin-top: 7px;
           letter-spacing: 2px; }
-  main .team .person_ava {
+  main .team .team_ava {
     position: relative;
     width: 400px;
     height: 533px; }
-    main .team .person_ava img {
+    main .team .team_ava .person_ava {
       position: absolute;
       top: 0;
       left: 0;
@@ -504,17 +505,17 @@ main .team {
       -o-object-fit: cover;
       object-fit: cover;
       z-index: 3; }
-      main .team .person_ava img:nth-child(2), main .team .person_ava img:nth-child(3) {
+      main .team .team_ava .person_ava:nth-child(2), main .team .team_ava .person_ava:nth-child(3) {
         -webkit-filter: blur(73px);
         filter: blur(73px);
         clip: rect(0px, 395px, 525px, 0px); }
-      main .team .person_ava img:nth-child(2) {
+      main .team .team_ava .person_ava:nth-child(2) {
         -webkit-transform: translate(75px, -3px) scale(0.89);
         -ms-transform: translate(75px, -3px) scale(0.89);
         transform: translate(75px, -3px) scale(0.89);
         opacity: 0.5;
         z-index: 2; }
-      main .team .person_ava img:nth-child(3) {
+      main .team .team_ava .person_ava:nth-child(3) {
         -webkit-transform: translate(34%, 0px) scale(0.78);
         -ms-transform: translate(34%, 0px) scale(0.78);
         transform: translate(34%, 0px) scale(0.78);
