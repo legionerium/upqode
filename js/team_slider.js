@@ -1,6 +1,13 @@
 window.onload = function () {
 	
 	teamSlider(0);
+
+	var team_slide_button = document.getElementsByClassName('team_slide_button')[0].children;
+	team_slide_button.addEventListener('click', function(event){
+		if (event.target == team_slide_button[0]) {
+			teamSlider(1);
+		}
+	}, false)
 }
 
 
@@ -58,7 +65,7 @@ function teamSlider(x){
 				let elem = team_item_name[0].children[4].children[0].children;
 				elem[0].setAttribute("src", temp);
 				for (var i = 0; i < person_ava.length; i++) {
-					let temp = team[i][key]
+					let temp = team[x][key]
 					person_ava[i].setAttribute("src", temp);
 				}
 			}
