@@ -1,19 +1,30 @@
 // addEventListener()
 //header slider
-  window.onload = function () {
-    var btn = document.getElementsByClassName('slider_button')
-    var slide = document.getElementsByClassName('slider_item')
-    var slider_dot = document.getElementsByName('radio')
-    btn[0].addEventListener('click', scroll_left , false)
-    btn[1].addEventListener('click', scroll_right , false)
+window.addEventListener('load', main, false)
+window.addEventListener('load', togleMenu, false)
+
+function togleMenu(){
+  var nav = document.getElementsByTagName('nav');
+  $(nav).click(function() {
+  $(this).toggleClass('show');
+  });
+}  
+
+
+function main () {
+    var btn = document.getElementsByClassName('slider_button');
+    var slide = document.getElementsByClassName('slider_item');
+    var slider_dot = document.getElementsByName('radio');
+    btn[0].addEventListener('click', scroll_left , false);
+    btn[1].addEventListener('click', scroll_right , false);
 
   	function scroll_right(){
-  		for (var i = 0; i < slide.length; i++) {
+  		for (let i = 0; i < slide.length; i++) {
   			if (!$(slide[i]).hasClass('active')) {
   				continue;
   			}else{
   				$(slide[i]).removeClass('active');
-  				$(slider_dot[i]).removeAttr('checked')
+  				$(slider_dot[i]).removeAttr('checked');
   				i++;
   				if (i<slide.length) {
   					$(slide[i]).addClass('active');
@@ -21,23 +32,23 @@
   					return;
   				}else{
   					$(slide[0]).addClass('active');
-  					$(slider_dot[0]).attr('checked', '')
+  					$(slider_dot[0]).attr('checked', '');
   					return;
   				}
   			}
   		}
-  	}
+  	};
 
   	function scroll_left(){
-  		for (var i = 0; i < slide.length; i++) {
+  		for (let i = 0; i < slide.length; i++) {
   			if (!$(slide[i]).hasClass('active')) {
   				continue;
   			}else{
   				$(slide[i]).removeClass('active');
-  				$(slider_dot[i]).removeAttr('checked')
+  				$(slider_dot[i]).removeAttr('checked');
   				if (i==0) {
   					$(slide[slide.length-1]).addClass('active');
-  					$(slider_dot[slider_dot.length-1]).attr('checked', '')
+  					$(slider_dot[slider_dot.length-1]).attr('checked', '');
   					return;
   				}else{
   					--i;
@@ -46,9 +57,8 @@
   				}
   			}
   		}
-  	}
-  }
-
+  	};
+  };
 
 //youtube API
   var tag = document.createElement('script');
