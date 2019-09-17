@@ -414,7 +414,7 @@ main .servises .servise_item {
     padding-left: 79px; }
 
 main .team {
-  width: 1175px;
+  width: 61.2%;
   margin: 12.7% auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -523,7 +523,7 @@ main .team {
         z-index: 1; }
 
 main .contact_us {
-  width: 1175px;
+  width: 61.2%;
   margin: 10% auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -609,3 +609,30 @@ main footer {
     letter-spacing: 0.2px;
     margin-top: 6.2%;
     padding-bottom: 3.1%; }
+
+@media screen and (max-width: 1024px) {
+  header nav {
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 0.3%; }
+    header nav:hover {
+      cursor: pointer; }
+    header nav ul {
+      display: inherit; }
+      header nav ul li {
+        -webkit-transition: all 1s linear;
+        -o-transition: all 1s linear;
+        transition: all 1s linear;
+        margin: inherit;
+        border-top: 5px solid #fff;
+        height: 10px; }
+        header nav ul li:nth-child(n+4) {
+          display: none; }
+        header nav ul li a {
+          visibility: hidden; }
+    header nav.show ul li {
+      display: block;
+      border-top: none;
+      height: inherit; }
+      header nav.show ul li a {
+        visibility: visible; } }
