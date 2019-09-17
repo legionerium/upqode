@@ -19,7 +19,7 @@ team[1] = {
 	linkedin: 'https://www.linkedin.com/',
 	twitter: 'https://www.twitter.com/',
 	foto: '../img/team_ava_2.png'
-}
+};
 
 team[2] = {
 	name: 'Bell Minnie ',
@@ -29,33 +29,35 @@ team[2] = {
 	linkedin: 'https://www.linkedin.com/',
 	twitter: 'https://www.twitter.com/',
 	foto: '../img/team_ava_3.png'
-}
+};
 
 
-window.onload = function () {
-	var i = 0;
+window.addEventListener('load', slider, false)
+
+function slider () {
+	var count = 0;
 	var team_slide_button = document.getElementsByClassName('team_slide_button')[0].children;
-	team_slide_button[0].addEventListener("click", function(event){
+	team_slide_button[0].addEventListener('click', function(event){
 			event.preventDefault()
-				++i
-				if (i<=team.length) {
-					teamSlider(i, team);
+				++count
+				if (count<=team.length-1) {
+					teamSlider(count, team);
 				}else{
-					i=0;
-					teamSlider(i, team);
+					count=0;
+					teamSlider(count, team);
 				}
 	}, false)
-	team_slide_button[1].addEventListener("click", function(event){
+	team_slide_button[1].addEventListener('click', function(event){
 			event.preventDefault()
-				if (i==0) {
-					i=team.length;
-					teamSlider(i, team);
+				if (count==0) {
+					count=team.length-1;
+					teamSlider(count, team);
 				}else{
-					--i;
-					teamSlider(i, team);
+					--count;
+					teamSlider(count, team);
 				}
 	}, false)
-}
+
 
 
 
@@ -64,24 +66,24 @@ function teamSlider(x, mass){
 	var team_item_name = document.getElementsByClassName('discrition');
 	var person_ava = document.getElementsByClassName('person_ava');
 	var team_slide_name = document.getElementsByClassName('team_slide_name')[0];
-	var i = 0;
-	var j = 0;
+	var count_i = 0;
+	var count_j = 0;
 	for (var key in mass[x]){
 		//присвоение значений первым трем дочерным элементам класса "discrition"
-		if (i<3) {
-			team_item_name[0].children[i].innerHTML = mass[x][key];
-			++i;
+		if (count_i<3) {
+			team_item_name[0].children[count_i].innerHTML = mass[x][key];
+			++count_i;
 		//присвоение значений 4 и 5 дочерным элементам класса "discrition"
 		}else{
-			if (3<=i && i<6) {					
+			if (3<=count_i && count_i<6) {					
 				let temp = mass[x][key];
-				let elem = team_item_name[0].children[3].children[j].children;
+				let elem = team_item_name[0].children[3].children[count_j].children;
 				elem[0].setAttribute("href", temp);
-				++j;
-				++i;
+				++count_j;
+				++count_i;
 			}else{
 				// формирование фото слайдера
-				for (var i = 0; i < person_ava.length; i++) {
+				for (let i = 0; i < person_ava.length; i++) {
 					let temp = mass[x][key]
 					person_ava[i].setAttribute("src", temp);
 				}if (x+1>=mass.length){
@@ -106,4 +108,5 @@ function teamSlider(x, mass){
 			break
 		}
 	}		
+}
 }
