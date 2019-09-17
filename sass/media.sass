@@ -1,0 +1,28 @@
+@media screen and (max-width:1024px)
+	header
+		nav
+			position: absolute
+			margin-left: 5%
+			margin-top: 0.3%
+			&:hover
+				cursor: pointer
+			ul
+				display: inherit
+				li					
+					transition: all 1s linear
+					margin: inherit
+					border-top: 5px solid #fff
+					height: 10px
+					&:nth-child(n+4)
+						display: none
+					a
+						visibility: hidden
+			&.show
+				// transition: all 1s linear
+				ul
+					li
+						display: block
+						border-top: none
+						height: inherit
+						a
+							visibility: visible
