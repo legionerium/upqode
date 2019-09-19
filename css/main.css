@@ -194,7 +194,9 @@ header {
             border-bottom: 1px solid #fff; }
 
 .header_slider {
-  position: relative; }
+  position: relative;
+  height: 100vh;
+  overflow: hidden; }
   .header_slider .slider_text {
     position: absolute;
     width: 100%;
@@ -246,9 +248,7 @@ header {
   .header_slider .slider_item {
     position: relative;
     display: none;
-    height: 100vh;
-    z-index: 1;
-    overflow: hidden; }
+    padding-bottom: 56.25%; }
     .header_slider .slider_item iframe, .header_slider .slider_item object, .header_slider .slider_item embed {
       position: absolute;
       top: 0;
@@ -510,9 +510,9 @@ main .team {
         filter: blur(73px);
         clip: rect(0px, 395px, 525px, 0px); }
       main .team .team_ava .person_ava:nth-child(2) {
-        -webkit-transform: translate(75px, -3px) scale(0.89);
-        -ms-transform: translate(75px, -3px) scale(0.89);
-        transform: translate(75px, -3px) scale(0.89);
+        -webkit-transform: translate(20%, -3px) scale(0.89);
+        -ms-transform: translate(20%, -3px) scale(0.89);
+        transform: translate(20%, -3px) scale(0.89);
         opacity: 0.5;
         z-index: 2; }
       main .team .team_ava .person_ava:nth-child(3) {
@@ -609,6 +609,28 @@ main footer {
     letter-spacing: 0.2px;
     margin-top: 6.2%;
     padding-bottom: 3.1%; }
+
+@media screen and (max-width: 1366px) {
+  .header_slider .slider_nav .slider_button {
+    right: 4.5%; }
+    .header_slider .slider_nav .slider_button:first-child {
+      left: 4%; }
+  .header_slider .team {
+    width: 90% !important; }
+    .header_slider .team .team_ava .person_ava:nth-child(2) {
+      -webkit-transform: translate(10%, -3px) scale(0.89);
+      -ms-transform: translate(10%, -3px) scale(0.89);
+      transform: translate(10%, -3px) scale(0.89); }
+    .header_slider .team .team_ava .person_ava:nth-child(3) {
+      -webkit-transform: translate(24%, 0px) scale(0.78);
+      -ms-transform: translate(24%, 0px) scale(0.78);
+      transform: translate(24%, 0px) scale(0.78); }
+  .header_slider .contact_us {
+    width: 90% !important; } }
+
+@media screen and (max-width: 1310px) {
+  header nav {
+    margin-left: 18.5%; } }
 
 @media screen and (max-width: 1024px) {
   header nav {
