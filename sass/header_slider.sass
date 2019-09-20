@@ -29,9 +29,7 @@
 			line-height: 22px
 			letter-spacing: 0.5px
 			color: #F4FBF6
-			z-index: 5
-			&:hover
-				cursor: pointer
+			z-index: 5			
 	.slider_nav
 		z-index: 2
 		position: absolute
@@ -50,7 +48,12 @@
 				cursor: pointer
 				opacity: 1
 	.slider_item
-		position: relative
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: -99
 		display: none
 		padding-bottom: 56.25%
 		iframe, object, embed

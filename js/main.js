@@ -2,12 +2,23 @@
 //header slider
 window.addEventListener('load', main, false)
 window.addEventListener('load', togleMenu, false)
+window.addEventListener('resize', togleMenu, false)
 
 function togleMenu(){
-  var nav = document.getElementsByTagName('nav');
-  $(nav).click(function() {
-  $(this).toggleClass('show');
-  });
+  if(window.matchMedia('(max-width: 1024px)').matches){
+    var nav = document.getElementsByTagName('nav');
+    $(nav).click(function() {
+      $(this).toggleClass('show');
+      var close = document.createElement('p');
+      if ($(this).hasClass('show')) {
+        for (var i = 0; i < 2; i++) {
+          $(this).append("<p />");
+        }
+      }else{
+        $('nav').children('p').remove()
+      }
+    });    
+  }
 }  
 
 
@@ -60,6 +71,59 @@ function main () {
   	};
   };
 
+$(function() {
+  $(window).on("scroll", function() {
+    if($(window).scrollTop() > 50) {
+      $("header").css( "background", "rgba(242, 242, 242, 0.5)" );
+    } else {
+      $("header").css( "background", "unset" );
+    }
+    var temp_scroll = $(window).scrollTop()
+    var menu_item = document.getElementsByClassName('menu_item')
+    switch(true){
+      case temp_scroll >= 0 && temp_scroll <= 500: 
+        remove_class()
+        menu_item[0].classList.add('current')
+        break;
+      case temp_scroll >= 500 && temp_scroll <= 2800: 
+        remove_class()
+        menu_item[1].classList.add('current')
+        break;
+      case temp_scroll >= 2800 && temp_scroll <= 4000: 
+        remove_class()
+        menu_item[2].classList.add('current')
+        break;
+      case temp_scroll >= 4000 && temp_scroll <= 5000: 
+        remove_class()
+        menu_item[3].classList.add('current')
+        break;
+
+    }
+    function remove_class(){
+      for (var i = 0; i < menu_item.length; i++) {
+        menu_item[i].classList.remove('current')
+      }
+    }
+  });
+});
+
+
+$(document).ready(function(){
+  $("nav").on("click","a", function (event) {
+    //отменяем стандартную обработку нажатия по ссылке
+    event.preventDefault();
+
+    //забираем идентификатор бока с атрибута href
+    var id  = $(this).attr('href'),
+
+    //узнаем высоту от начала страницы до блока на который ссылается якорь
+      top = $(id).offset().top;
+    
+    //анимируем переход на расстояние - top за 1500 мс
+    $('body,html').animate({scrollTop: top}, 1500);
+  });
+});
+
 //youtube API
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
@@ -100,21 +164,34 @@ function main () {
       player.stopVideo();
   }
 
+
+
 //canvas circle backgraund phone in servises block
   window.onload = function circle()
   {
   	var canvas = document.getElementsByClassName('circle');
   	for (var i = 0; i < canvas.length; i++) {
   		var obCanvas = canvas[i].getContext('2d');
-  		obCanvas.canvas.width = 500;
-  	  obCanvas.canvas.height = 500;
-  		obCanvas.beginPath();
-  		obCanvas.arc(250, 250, 170, 0, 2*Math.PI, false);
-  		obCanvas.fillStyle = '#F2F2F2';
-  		obCanvas.fill();
-  		obCanvas.lineWidth = 70;
-  		obCanvas.strokeStyle = '#E3EAE5';
-  		obCanvas.stroke();
+    		obCanvas.canvas.width = 500;
+    	  obCanvas.canvas.height = 500;
+    		obCanvas.beginPath();
+    		obCanvas.arc(250, 250, 170, 0, 2*Math.PI, false);
+    		obCanvas.fillStyle = '#F2F2F2';
+    		obCanvas.fill();
+    		obCanvas.lineWidth = 70;
+    		obCanvas.strokeStyle = '#E3EAE5';
+    		obCanvas.stroke();
+      if(window.matchMedia('(max-width: 1366px)').matches){
+        obCanvas.canvas.width = 300;
+        obCanvas.canvas.height = 300;
+        obCanvas.beginPath();
+        obCanvas.arc(150, 150, 100, 0, 2*Math.PI, false);
+        obCanvas.fillStyle = '#F2F2F2';
+        obCanvas.fill();
+        obCanvas.lineWidth = 30;
+        obCanvas.strokeStyle = '#E3EAE5';
+        obCanvas.stroke();
+      }
   	}
   }
 

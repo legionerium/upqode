@@ -5,25 +5,104 @@
 				right: 4.5%
 				&:first-child
     			left: 4%
-  main 
+		.slider_text
+			p
+				&:nth-child(1)
+					font-size: 60px
+		.slider_dots
+			.container
+				padding: 1%
+	main
+		.servises, .team, .contact_us
+			width: 90%
+			margin-left: auto
+			margin-right: auto
+		.servises
+			.servise_item
+				.left_side
+					width: 320px !important
+					height: 320px
+					img
+						width: 78%
+						padding-right: 16%
+				&:first-child
+					.right_side
+						.title, .sub_title
+							width: 70%
+				&:nth-child(2)
+					padding-right: 0
+					padding-left: 2%
+					.right_side
+						padding-left: 0
+					.left_side
+						img
+							padding-right: 0
+							margin-left: 6%
+
 		.team
-			width: 90% !important
-			.team_ava 
+			justify-content: center
+			.discrition
+				.name
+					font-size: 30px
+					margin-top: 1%
+				.post, .about, ul li a,
+					font-size: 13px
+				.post
+					margin-top: 0.5%
+					margin-bottom: 3%
+				.soc_link
+					margin-top: 2.7%
+					margin-bottom: 5%
+			.team_ava
+				width: 300px
+				height: 400px
 				.person_ava
+					&:nth-child(2), &:nth-child(3)
+						clip: rect(0px, 300px, 400px, 0px)
 					&:nth-child(2)
-						transform: translate(10%, -3px) scale(0.89)
+						transform: translate(12%, -3px) scale(0.89)
 					&:nth-child(3)
 						transform: translate(24%, 0px) scale(0.78)
 		.contact_us
-			width: 90% !important
-
+			justify-content: center
+			.adress
+				.title
+					font-size: 40px
+					line-height: 45px
+				.sub_title
+					font-size: 13px
+					line-height: 18px
+					margin-bottom: 3%
+				.adress_item
+					ul
+						li
+							padding: 6% 0 6% 5%
+							a
+								.city
+									p
+										&:first-child
+											font-size: 16px
+										&:last-child
+											font-size: 13px
+			#map
+				width: 50%
+				height: 627px
 @media screen and (max-width:1310px)
 	header 
 		nav
     	margin-left: 18.5%
-    	
+
+@media screen and (max-width:1060px)
+	header
+		nav
+			ul
+				li
+					margin-right: 50px
+
 @media screen and (max-width:1024px)
 	header
+		.logo
+			margin: auto
 		nav
 			position: absolute
 			margin-left: 5%
@@ -32,6 +111,7 @@
 				cursor: pointer
 			ul
 				display: inherit
+				width: 40px
 				li					
 					transition: all 1s linear
 					margin: inherit
@@ -39,14 +119,41 @@
 					height: 10px
 					&:nth-child(n+4)
 						display: none
+						transition: all 0.4s linear
 					a
 						visibility: hidden
+						font-size: 0
+						transition: all 0.4s linear
 			&.show
-				// transition: all 1s linear
 				ul
+					width: inherit
 					li
 						display: block
 						border-top: none
 						height: inherit
 						a
 							visibility: visible
+							font-size: 15px
+			p
+				position: absolute
+				top: 10px
+				left: -35px
+				transform: rotate(45deg)
+				border: 2px solid #fff
+				width: 20px
+				&:last-child
+					transform: rotate(135deg)
+	.header_slider
+		.slider_dots
+			.container
+				padding: 1% 1.2%
+
+@media (min-aspect-ratio: 16/9)
+  .slider_video
+		height: 300%
+		top: -100%
+
+@media (max-aspect-ratio: 16/9)
+	.slider_video
+		width: 300%
+		left: -100%
